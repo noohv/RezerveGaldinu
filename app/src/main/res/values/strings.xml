@@ -15,4 +15,8 @@
     <string name="email">E-pasts</string>
     <string name="password">Parole</string>
     <string name="name">Vārds</string>
+    <string name="bookTable">Rezervēt Galdiņu</string>
+    <string name="restaurant_image">Restaurant Image</string>
+    <string name="restaurantname">RestaurantName</string>
+    <string name="address">Address</string>
 </resources>
