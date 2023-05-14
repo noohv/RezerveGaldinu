@@ -13,35 +13,20 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val emailInput = findViewById<EditText>(R.id.loginEmailInput)
-        val passwordInput = findViewById<EditText>(R.id.loginPasswordInput)
         val loginSubmitButton = findViewById<Button>(R.id.loginSubmitBtn)
         val registerButton = findViewById<Button>(R.id.noProfileRegisterBtn)
 
         loginSubmitButton.setOnClickListener {
-            val enteredEmail = emailInput.text.toString()
-            val enteredPassword = passwordInput.text.toString()
-            var toastText = ""
-
-            if(passwordInput.length() < 8) {
-                toastText = "Minimālais paroles garums ir 8 simboli"
-            }
-            if (!enteredEmail.isNullOrEmpty() || !Patterns.EMAIL_ADDRESS.matcher(enteredEmail).matches()) {
-                toastText = "E-pasta lauks nepareizi aizpildīts"
-            }
-            if(enteredEmail.isEmpty() && enteredPassword.isEmpty()) {
-                toastText = "Aizpildiet visus laukus"
-            }
-            else {
+            if(checkAllFields()) {
                 val intent = Intent(this, HomeScreen::class.java)
                 startActivity(intent)
-            }
 
-            Toast.makeText(
-                this@LoginActivity,
-                toastText,
-                Toast.LENGTH_SHORT
-            ).show()
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Pieteikšanās veiksmīga",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
 
         registerButton.setOnClickListener {
@@ -49,6 +34,27 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
     }
 
+    private fun checkAllFields(): Boolean {
+        val emailInput = findViewById<EditText>(R.id.loginEmailInput)
+        val passwordInput = findViewById<EditText>(R.id.loginPasswordInput)
+
+        if (emailInput!!.length() == 0) {
+            emailInput!!.error = "Lauks ir obligāts"
+            return false
+        }
+
+        if (passwordInput!!.length() == 0) {
+            passwordInput!!.error = "Lauks ir obligāts"
+            return false
+        } else if (passwordInput!!.length() < 8) {
+            passwordInput!!.error = "Minimālais simbolu skaits ir 8"
+            return false
+        }
+
+        return true
+    }
 }
+
