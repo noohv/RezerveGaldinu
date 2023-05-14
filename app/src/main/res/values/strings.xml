@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">RezerveGaldinu</string>
+    <string name="rezerve_galdinu">Rezervē Galdiņu</string>
+    <string name="EsmuLietotajs">Esmu Lietotājs</string>
+    <string name="IzveidotProfilu">Izveidot Profilu</string>
+    <string name="reserveTable">Rezervējiet savu galdiņu vienkārši!</string>
+    <string name="pieteikties">Pieteikties</string>
+    <string name="parole_hint">Parole</string>
+    <string name="epasts_hint">E-pasts</string>
+    <string name="loginTitle">Pieteikties ar esošu lietotāju</string>
+    <string name="noProfileRegister">Nav profila? Reģistrējies</string>
+    <string name="register">Reģistrēties</string>
+    <string name="telefons">Telefons</string>
+    <string name="repeat_password">Atkārtota parole</string>
+    <string name="email">E-pasts</string>
+    <string name="password">Parole</string>
+    <string name="name">Vārds</string>
 </resources>
