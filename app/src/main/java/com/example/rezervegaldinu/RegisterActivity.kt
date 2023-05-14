@@ -22,17 +22,14 @@ class RegisterActivity : AppCompatActivity() {
         registerButton.setOnClickListener {
             if(checkAllFields()) {
 
-
-
                 val name = nameInputField.text.toString()
                 val email = emailInputField.text.toString()
                 val phone = phoneInputField.text.toString()
-                val password = passwordInputField.text.toString()
-
+                val user = User(name.substringBefore('@'), phone, email)
 
                 val intent = Intent(this, HomeScreen::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                intent.putExtra("EMAIL", emailInputField.text.toString())
+                intent.putExtra("user", user)
                 startActivity(intent)
 
                 Toast.makeText(

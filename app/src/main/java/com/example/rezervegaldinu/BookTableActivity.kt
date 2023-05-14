@@ -27,7 +27,10 @@ class BookTableActivity : AppCompatActivity() {
         val title = intent.getStringExtra("restaurantName")
         bookTitle.text = title
 
-        bookPerson.text = user.name
+        bookPerson.text = "Galdiņš tiks rezervēts uz\n" +
+                "${user.name}\n" +
+                "${user.email}\n" +
+                "${user.phone}"
 
         pickDateBtn.setOnClickListener {
             val c = Calendar.getInstance()
