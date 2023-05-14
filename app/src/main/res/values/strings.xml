@@ -19,4 +19,11 @@
     <string name="restaurant_image">Restaurant Image</string>
     <string name="restaurantname">RestaurantName</string>
     <string name="address">Address</string>
+    <string name="reserveName">Galdiņš tiks rezervēts uz Vārds vārdu</string>
+    <string name="Cancel">Atcelt</string>
+    <string name="book">Rezervēt</string>
+    <string name="datums">Datums:</string>
+    <string name="_20_06_2023">20.06.2023</string>
+    <string name="cilveki">Cilvēki:</string>
+    <string name="_4">4</string>
 </resources>

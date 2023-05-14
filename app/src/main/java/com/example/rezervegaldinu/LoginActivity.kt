@@ -19,12 +19,16 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val emailInput = findViewById<EditText>(R.id.loginEmailInput)
         val loginSubmitButton = findViewById<Button>(R.id.loginSubmitBtn)
         val registerButton = findViewById<Button>(R.id.noProfileRegisterBtn)
 
         loginSubmitButton.setOnClickListener {
             if(checkAllFields()) {
+                val user = User(emailInput.text.toString().substringBefore('@'), "25425238", emailInput.text.toString())
                 val intent = Intent(this, HomeScreen::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.putExtra("user", user)
                 startActivity(intent)
 
                 Toast.makeText(

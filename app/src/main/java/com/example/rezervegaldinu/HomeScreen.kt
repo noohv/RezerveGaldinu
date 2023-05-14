@@ -1,5 +1,6 @@
 package com.example.rezervegaldinu
 
+import android.app.Person
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -21,6 +22,8 @@ class HomeScreen : AppCompatActivity() {
         setContentView(R.layout.activity_home_screen)
         binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val intentUser = intent.getSerializableExtra("user") as User
+        val user = User(intentUser.name, intentUser.phone, intentUser.email)
 
         val imageId = intArrayOf(
             R.drawable.logo,
@@ -70,6 +73,7 @@ class HomeScreen : AppCompatActivity() {
             i.putExtra("averagePrice", averagePrice)
             i.putExtra("country", country)
             i.putExtra("image", imageId)
+            i.putExtra("user", user)
             startActivity(i)
         }
 
