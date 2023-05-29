@@ -33,10 +33,10 @@ class HomeScreen : AppCompatActivity() {
         )
 
         val restaurantName = arrayOf(
-            "Itallisimo",
-            "Olīve",
-            "SushiBoom",
-            "Gruzīņu Restorāns"
+            "Restorāns 1",
+            "Restorāns 2",
+            "Restorāns 3",
+            "Restorāns 4"
         )
 
         val averagePrices = arrayOf(
@@ -44,6 +44,13 @@ class HomeScreen : AppCompatActivity() {
             "30€",
             "15€",
             "20€"
+        )
+
+        val addresses = arrayOf(
+            "Brīvības iela 1, Rīga, LV-1001",
+            "Raiņa iela 10, Daugavpils, LV-5401",
+            "Jūras iela 5, Liepāja, LV-3401",
+            "Pils iela 3, Cēsis, LV-4101"
         )
 
         val countries = arrayOf(
@@ -56,7 +63,7 @@ class HomeScreen : AppCompatActivity() {
         restaurantArrayList = ArrayList()
 
         for(i in restaurantName.indices) {
-            val restaurant = Restaurant(restaurantName[i], averagePrices[i], countries[i], imageId[i])
+            val restaurant = Restaurant(restaurantName[i], averagePrices[i], countries[i], addresses[i], imageId[i])
             restaurantArrayList.add(restaurant)
         }
 
@@ -66,12 +73,14 @@ class HomeScreen : AppCompatActivity() {
             val restaurantName = restaurantName[position]
             val averagePrice = averagePrices[position]
             val country = countries[position]
+            val address = addresses[position]
             val imageId = imageId[position]
 
             val i = Intent(this, RestaurantActivity::class.java)
             i.putExtra("restaurantName", restaurantName)
             i.putExtra("averagePrice", averagePrice)
             i.putExtra("country", country)
+            i.putExtra("address", address)
             i.putExtra("image", imageId)
             i.putExtra("user", user)
             startActivity(i)

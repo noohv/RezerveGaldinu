@@ -23,7 +23,7 @@ class RestaurantActivity : AppCompatActivity() {
 
         restaurantImage.setImageResource(intent.getIntExtra("image", R.drawable.logo))
         restaurantName.text = intent.getStringExtra("restaurantName")
-        restaurantAddress.text = intent.getStringExtra("averagePrice")
+        restaurantAddress.text = intent.getStringExtra("address")
 
         bookButton.setOnClickListener {
             val intent = Intent(this, BookTableActivity::class.java)

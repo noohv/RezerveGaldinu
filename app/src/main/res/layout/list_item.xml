@@ -50,10 +50,11 @@
                     android:textStyle="bold">
 
                 </TextView>
+
                 <TextView
+                    android:id="@+id/cuisineCountry"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/cuisineCountry"
                     android:text="Italian"
                     android:textColor="@color/black"
                     android:textSize="14sp"
