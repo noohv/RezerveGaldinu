@@ -36,19 +36,6 @@
         app:strokeColor="#000000"
         app:strokeWidth="2dp" />
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="255dp"
-        android:layout_height="228dp"
-        android:contentDescription="@string/rezerve_galdinu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174"
-        app:srcCompat="@drawable/logo"
-        tools:srcCompat="@drawable/logo" />
-
     <TextView
         android:id="@+id/startText"
         android:layout_width="wrap_content"
@@ -62,4 +49,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.616" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="295dp"
+        android:layout_height="72dp"
+        android:text="Rezervē Restorānu"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/startText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.408" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,9 @@ package com.example.rezervegaldinu
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -16,6 +18,7 @@ class BookTableActivity : AppCompatActivity() {
     lateinit var btnTimePicker: Button
     lateinit var txtDate: EditText
     lateinit var txtTime: EditText
+    lateinit var prefs: SharedPreferences
     var mYear: Int = 0
     var mMonth: Int = 0
     var mDay: Int = 0
@@ -33,8 +36,6 @@ class BookTableActivity : AppCompatActivity() {
         val submitBtn = findViewById<Button>(R.id.confirmBookBtn)
         val cancelBtn = findViewById<Button>(R.id.cancelBtn)
         var user = intent.getSerializableExtra("user") as User
-
-
 
         btnDatePicker=findViewById<Button>(R.id.btn_date);
         btnTimePicker=findViewById<Button>(R.id.btn_time);
@@ -87,11 +88,14 @@ class BookTableActivity : AppCompatActivity() {
         }
 
 
-
-
-
-
         submitBtn.setOnClickListener {
+            val array = arrayOf(title, txtDate.text.toString(), txtTime.text.toString(), peopleInput.text.toString() + " cilvēkiem")
+            prefs = PreferenceManager.getDefaultSharedPreferences(this)
+            var editor: SharedPreferences.Editor = prefs.edit()
+            val arrayString = array.joinToString(", ")
+
+            editor.putString(title, arrayString)
+            editor.commit()
             finish()
         }
 

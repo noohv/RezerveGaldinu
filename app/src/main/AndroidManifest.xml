@@ -15,6 +15,9 @@
         android:theme="@style/Theme.RezerveGaldinu"
         tools:targetApi="31">
         <activity
+            android:name=".ManasRezervacijas"
+            android:exported="false" />
+        <activity
             android:name=".BookTableActivity"
             android:exported="false" />
         <activity

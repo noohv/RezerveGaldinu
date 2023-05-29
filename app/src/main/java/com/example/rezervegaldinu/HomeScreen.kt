@@ -86,6 +86,11 @@ class HomeScreen : AppCompatActivity() {
             startActivity(i)
         }
 
+        binding.rezervacijas.setOnClickListener {
+            val i = Intent(this, ManasRezervacijas::class.java)
+            startActivity(i)
+        }
+
     }
 
 }

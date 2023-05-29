@@ -16,8 +16,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/listview"
-        tools:listitem="@layout/list_item"/>
+        android:layout_width="416dp"
+        android:layout_height="565dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/list_item" />
+
+    <Button
+        android:id="@+id/rezervacijas"
+        android:layout_width="328dp"
+        android:layout_height="56dp"
+        android:backgroundTint="#000000"
+        android:text="Apskatīt Rezervācijas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listview" />
 </androidx.constraintlayout.widget.ConstraintLayout>
