@@ -44,10 +44,8 @@ class BookTableActivity : AppCompatActivity() {
         val title = intent.getStringExtra("restaurantName")
         bookTitle.text = title
 
-        bookPerson.text = "Galdiņš tiks rezervēts uz\n" +
-                "${user.name}\n" +
-                "${user.email}\n" +
-                "${user.phone}"
+        bookPerson.text = "Galdiņš tiks rezervēts uz\n" + "${user.name}\n"
+
 
         btnDatePicker.setOnClickListener {
             val datePicker = DatePickerDialog(

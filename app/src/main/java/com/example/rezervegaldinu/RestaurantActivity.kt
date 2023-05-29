@@ -17,6 +17,7 @@ class RestaurantActivity : AppCompatActivity() {
         val restaurantName = findViewById<TextView>(R.id.restName)
         val restaurantAddress = findViewById<TextView>(R.id.address)
         val bookButton = findViewById<Button>(R.id.bookTableBtn)
+        val backButton = findViewById<Button>(R.id.backBtn)
         val intentUser = intent.getSerializableExtra("user") as User
         val user = User(intentUser.name, intentUser.phone, intentUser.email)
 
@@ -30,6 +31,10 @@ class RestaurantActivity : AppCompatActivity() {
             intent.putExtra("restaurantName", restaurantName.text)
             intent.putExtra("user", user)
             startActivity(intent)
+        }
+
+        backButton.setOnClickListener {
+            finish()
         }
     }
 }
